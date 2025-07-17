@@ -3,8 +3,6 @@
 This prototype demonstrates an **ingestion + traceability pipeline** using a **public dataset (~30,000 rows)**.  
 It shows how raw data is ingested, fingerprinted for traceability, embedded for semantic search, and served with an API.
 
-
-
 ##Pipeline Steps
 
 **Ingestion:**  
@@ -28,12 +26,9 @@ It shows how raw data is ingested, fingerprinted for traceability, embedded for 
 - Uses **pandas** to infer schema from the data.  
 - Cleans rows with missing critical fields and removes duplicates.
 
-
-##Productionization
-
 For production:
-- Orchestrate with **Airflow** or **Dagster** for scheduling.
-- Manage cloud infra with **Terraform** (S3, Snowflake, IAM).
+- Orchestrate with **Airflow** for scheduling.
+- Manage cloud infra with **Terraform** (S3, Snowflake).
 - Store raw data in **S3**, query with **Snowflake** or **DuckDB**.
 - Use **Weaviate** or **Pinecone** for scalable vector DB.
 - Containerize with **Docker**; deploy **FastAPI** behind an API Gateway.
