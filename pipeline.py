@@ -56,9 +56,9 @@ print("Starting FastAPI...")
 app = FastAPI()
 
 @app.post("/search")
-async def search(request: Request):
-    body = await request.json()
-    query = body.get("query")
+async def search(request: str):
+    
+    query = request.strip()
 
     query_embedding = model.encode([query])
     D, I = index.search(query_embedding, k=3)
